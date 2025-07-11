@@ -1,0 +1,230 @@
+/* header */
+.cabecalho {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #020124;
+    /* background-color: #00060b; */
+    padding: 10px 5%;
+}
+
+.logo > img {
+    border-radius: 40%;
+    width: clamp(50px, 5vw, 80px);
+    height: auto;
+    padding: 3px;
+    margin-top: 3px;
+    margin-left: clamp(10px, 5vw, 50px);
+}
+
+.lista {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: clamp(5px, 1vw, 10px);
+    list-style: none;
+    margin-left: auto;
+    padding-right: clamp(10px, 5vw, 50px);
+}
+
+.lista > li {
+    padding: clamp(10px, 2vw, 30px) clamp(5px, 1vw, 15px);
+}
+
+.lista a {
+    text-decoration: none;
+    color: aliceblue;
+    opacity: 0.5;
+    font-family: "Ubuntu", sans-serif;
+    font-size: clamp(14px, 2vw, 18px);
+    font-weight: 500;
+    transition: 0.3s;
+    position: relative;
+    white-space: nowrap;
+}
+
+.lista a:hover {
+    opacity: initial;
+}
+
+.lista a::after {
+    content: "";
+    display: block;
+    background-color: aliceblue;
+    width: 0%;
+    height: 2px;
+    margin-top: 4px;
+    position: absolute;
+    transition: 0.4s;
+}
+
+.lista a:hover::after {
+    width: 100%;
+}
+/* header */
+
+/* Inicio do carrossel */
+.box-carrossel{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.arrow{
+    background: none;
+    font-size: 30px;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    color: #ffc107;
+}
+
+.carrossel{
+    width: 700px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.slides{
+    display: flex;
+    transition: tranform.5s;
+}
+
+.slide{
+    min-width: 100%;
+}
+
+.dots{
+    display: flex;
+    justify-content: center;
+    margin-top: -100px;
+    margin-right: 8px;
+    gap: 30px;
+}
+
+.dot{ 
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: black;
+}
+/* Fim do carrossel */
+
+/* Main */
+.grid {
+    display: grid;
+    grid-template-columns: minmax(250px, 850px);
+    justify-content: center;
+    gap: clamp(30px, 5vw, 80px);
+    padding: clamp(30px, 5vw, 60px) clamp(15px, 3vw, 20px);
+}
+
+.introducao,
+.sobre-cla {
+    text-align: center;
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+    padding: clamp(20px, 4vw, 40px);
+    background-color: #1e1e1e;
+    border-radius: 16px;
+    border: 1px solid #333;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.introducao:hover,
+.sobre-cla:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+}
+
+.introducao h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(2rem, 6vw, 4rem);
+    font-weight: 700;
+    margin-bottom: clamp(15px, 2vw, 25px);
+    color: #f0f0f0;
+    letter-spacing: -1.5px;
+}
+
+.sobre-cla h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(1.5rem, 5vw, 3rem);
+    font-weight: 700;
+    margin-bottom: clamp(20px, 3vw, 30px);
+    color: #ffc107;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.introducao p {
+    font-size: clamp(0.9rem, 2vw, 1.25rem);
+    line-height: 1.8;
+    color: #b0b0b0;
+    margin-bottom: clamp(15px, 2vw, 20px);
+}
+
+.lista-recursos {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(10px, 2vw, 20px);
+    text-align: left;
+    margin-bottom: 40px;
+}
+
+.lista-recursos li {
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    font-weight: 600;
+    color: #f0f0f0;
+    position: relative;
+    padding-left: clamp(30px, 4vw, 45px);
+    text-align: left;
+    transition: transform 0.2s ease;
+}
+
+.lista-recursos li:hover {
+    transform: translateX(10px);
+    color: #ffeb3b;
+}
+
+.lista-recursos li::before {
+    content: '⮞';
+    font-size: clamp(1rem, 2vw, 1.8rem);
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    filter: grayscale(100%);
+    transition: filter 0.2s ease;
+}
+
+.sobre-cla > a {
+    padding: 13px;
+    border-radius: 15px;
+    background-color: #1e1e1e;
+    border: 3px solid aliceblue;
+    color:  #ffeb3b;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+/* Responsividade */
+@media (max-width: 600px) {
+    .lista {
+        margin-left: 0;
+        padding-right: 0;
+        justify-content: center;
+    }
+    
+    .logo > img {
+        margin-left: 10px;
+    }
+}
