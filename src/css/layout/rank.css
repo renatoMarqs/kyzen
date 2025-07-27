@@ -1,0 +1,16 @@
+.rank{
+    text-align: center;
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+    padding: clamp(20px, 4vw, 40px);
+    background-color: #1e1e1e;
+    border-radius: 16px;
+    border: 1px solid #333;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.rank > img {
+    width: 100%;
+}
